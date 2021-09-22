@@ -4,10 +4,9 @@ using System.Text;
 
 namespace GoblinHunter
 {
-    class Map : Enemy 
+    class Map : Enemy
     {
-        Boolean keyPress = false
-
+        Boolean keyPress = false;
         Tile[,] tileArr = new Tile[14, 8];
         //tile 14, 7. 14,6. 14,5. 14,4. 14,3. 14,2. 14,1. 14,0 = impassable
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
@@ -18,7 +17,7 @@ namespace GoblinHunter
         public int mapMaxHGHT = 14;
         public int mapMinWDTH = 4;
         private Tile Create;
-        
+
 
         Random r = new Random();
 
@@ -44,7 +43,7 @@ namespace GoblinHunter
 
         }
 
-        {
+        /*{
             rnd.Next(gobVision);
 
 
@@ -65,5 +64,6 @@ namespace GoblinHunter
        
        
         
+    }*/
     }
 }

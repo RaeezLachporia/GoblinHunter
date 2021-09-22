@@ -6,7 +6,7 @@ namespace GoblinHunter
 {
     class Goblin : Enemy
     {
-        Goblin [] gobVision = new Goblin[4];
+        public Goblin [] gobVision = new Goblin[4];
         int gobDirection;
 
 
