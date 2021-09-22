@@ -16,9 +16,7 @@ namespace GoblinHunter
         int mapMaxWDTH = 8;
         int mapMaxHGHT = 14;
         int mapMinWDTH = 4;
-        private Tile Create();
         
-        public void heroObject();
            
         
 
