@@ -43,27 +43,9 @@ namespace GoblinHunter
 
         }
 
-        /*{
-            rnd.Next(gobVision);
-
-
-            
-            }
-            if gobVision.Contains int _X && int _Y
-            {
-
-
-
-
-            }
-            
-
-
+        public void updateVison()
+        {
 
         }
-       
-       
-        
-    }*/
     }
 }
