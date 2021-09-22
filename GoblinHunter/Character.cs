@@ -8,7 +8,7 @@ namespace GoblinHunter
     {
         Tile[] charVision = new Tile[4];
         private int hp;
-        String Symbol
+        String Symbol;
         public int Hp
         {
             get { return hp; }
