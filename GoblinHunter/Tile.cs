@@ -5,7 +5,7 @@ using System.Text;
 namespace GoblinHunter
 {
 
-    public enum TileType
+    public enum TileType 
     {
         Hero,
         Enemy,

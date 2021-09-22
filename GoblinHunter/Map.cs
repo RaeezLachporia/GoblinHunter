@@ -18,8 +18,9 @@ namespace GoblinHunter
         public int mapMaxHGHT = 14;
         public int mapMinWDTH = 4;
         private Tile Create;
-
         
+
+        Random r = new Random();
 
         Random rnd = new Random();
 
@@ -43,14 +44,11 @@ namespace GoblinHunter
 
         }
 
-        public void UpdateVision(Enemy, bool keyPress, Random rnd = new Random())
         {
-            if keyPress == true
-            {
             rnd.Next(gobVision);
 
 
-
+            
             }
             if gobVision.Contains int _X && int _Y
             {
