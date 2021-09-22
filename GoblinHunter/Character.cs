@@ -8,7 +8,7 @@ namespace GoblinHunter
     {
         Tile[] charVision = new Tile[4];
         private int hp;
-        
+        String Symbol;
         public int Hp
         {
             get { return hp; }
@@ -35,6 +35,7 @@ namespace GoblinHunter
 
         protected Character(int _X, int _Y, TileType _TOT) : base(_X, _Y, _TOT)
         {
+
         }
 
         public enum Movement

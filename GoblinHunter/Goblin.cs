@@ -27,8 +27,9 @@ namespace GoblinHunter
 
         public int directionRoll()
         {
-            int 
-            return 
+            int direct = 0;
+            return direct;
+
         }
 
 

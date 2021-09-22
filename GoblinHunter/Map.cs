@@ -6,6 +6,7 @@ namespace GoblinHunter
 {
     class Map : Enemy 
     {
+        Boolean keyPress = false
 
         Tile[,] tileArr = new Tile[14, 8];
         //tile 14, 7. 14,6. 14,5. 14,4. 14,3. 14,2. 14,1. 14,0 = impassable
@@ -20,6 +21,10 @@ namespace GoblinHunter
         
 
         Random r = new Random();
+
+        Random rnd = new Random();
+
+
 
         public Goblin Character { get; private set; }
 
@@ -39,9 +44,13 @@ namespace GoblinHunter
 
         }
 
-        public void UpdateVision()
         {
+            rnd.Next(gobVision);
+
+
             
+            }
+            if gobVision.Contains int _X && int _Y
             {
 
 
