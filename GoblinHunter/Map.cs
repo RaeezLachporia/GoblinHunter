@@ -12,16 +12,18 @@ namespace GoblinHunter
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
         public Enemy[] enemies = new Enemy[5];
         Goblin[] gobVision = new Goblin[4];
-        public int mapMinHGHT = 8;
-        public int mapMaxWDTH = 8;
-        public int mapMaxHGHT = 14;
-        public int mapMinWDTH = 4;
-        private Tile Create;
-
+        int mapMinHGHT = 8;
+        int mapMaxWDTH = 8;
+        int mapMaxHGHT = 14;
+        int mapMinWDTH = 4;
+        
+           
+        
 
         Random r = new Random();
 
         Random rnd = new Random();
+
 
 
 
@@ -43,8 +45,10 @@ namespace GoblinHunter
 
         }
 
-        public void updateVison()
+        public void updateVision()
         {
+
+
 
         }
     }
