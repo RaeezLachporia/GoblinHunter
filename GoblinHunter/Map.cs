@@ -4,21 +4,28 @@ using System.Text;
 
 namespace GoblinHunter
 {
-    class Map : Enemy
+    class Map : Enemy 
     {
+        Boolean keyPress = false
+
         Tile[,] tileArr = new Tile[14, 8];
         //tile 14, 7. 14,6. 14,5. 14,4. 14,3. 14,2. 14,1. 14,0 = impassable
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
         public Enemy[] enemies = new Enemy[5];
-
+        Goblin[] gobVision = new Goblin[4];
         public int mapMinHGHT = 8;
         public int mapMaxWDTH = 8;
         public int mapMaxHGHT = 14;
         public int mapMinWDTH = 4;
         private Tile Create;
 
+        
 
-        Random r = new Random();
+        Random rnd = new Random();
+
+
+
+        public Goblin Character { get; private set; }
 
         public Map(int _X, int _Y, TileType _TOT, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies) : base(_X, _Y, _TOT)
         {
@@ -36,7 +43,27 @@ namespace GoblinHunter
 
         }
 
+        public void UpdateVision(Enemy, bool keyPress, Random rnd = new Random())
+        {
+            if keyPress == true
+            {
+            rnd.Next(gobVision);
 
+
+
+            }
+            if gobVision.Contains int _X && int _Y
+            {
+
+
+
+
+            }
+            
+
+
+
+        }
        
        
         

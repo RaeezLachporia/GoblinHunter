@@ -35,6 +35,7 @@ namespace GoblinHunter
 
         protected Character(int _X, int _Y, TileType _TOT) : base(_X, _Y, _TOT)
         {
+
         }
 
         public enum Movement
