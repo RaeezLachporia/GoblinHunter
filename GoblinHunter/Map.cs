@@ -7,7 +7,7 @@ namespace GoblinHunter
     class Map : Enemy
     {
         Boolean keyPress = false;
-        Tile[,] tileArr = new Tile[14, 8];
+        Tile[,] tileArr = new Tile[];
         //tile 14, 7. 14,6. 14,5. 14,4. 14,3. 14,2. 14,1. 14,0 = impassable
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
         public Enemy[] enemies = new Enemy[5];
@@ -20,8 +20,8 @@ namespace GoblinHunter
         //Enemy[1] = 2;
         
         public List<List<Tile>> tiles = new List<List<Tile>>();
-        public int mapSize;
-       
+        public int mapSizeWDTH;
+        public int mapSizeHGHT;
         Random rHGHT = new Random();
         Random rWDTH = new Random();
 
@@ -34,12 +34,12 @@ namespace GoblinHunter
             mapMaxWDTH = _mapMaxWDTH;
         }
 
-        void generateMap(Random rWDTH, Random rHGHT, int mapMinWDTH = 4, int mapMaxWDTH = 8)
+        void generateMap(int mapSizeWDTH, int mapSizeHGHT, Random rWDTH, Random rHGHT, int mapMinWDTH = 4, int mapMaxWDTH = 8, int mapMinHGHT = 8, int mapMaxHGHT = 14)
         {
-
-            mapSize = rWDTH.Next(mapMinWDTH, mapMaxWDTH);
-            Console.WriteLine(rWDTH);
-
+            mapSizeWDTH = rWDTH.Next(mapMinWDTH, mapMaxWDTH);
+            mapSizeHGHT = rHGHT.Next(mapMinHGHT, mapMaxHGHT);
+            
+            
         }
 
         public Goblin Character { get; private set; }
