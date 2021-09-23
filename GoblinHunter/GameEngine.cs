@@ -12,12 +12,16 @@ namespace GoblinHunter
         }
 
         public bool MovePlayer();
+        {
+
+
+        }
 
 
 
 
 
-        
-        
-    }
+
+
+}
 }

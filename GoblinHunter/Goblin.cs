@@ -33,7 +33,7 @@ namespace GoblinHunter
         }
 
 
-        public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT)
+        public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT,_Damage,_Health)
         {
             Health = 10;
             health = _Health;

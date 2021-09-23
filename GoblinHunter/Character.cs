@@ -77,6 +77,10 @@ namespace GoblinHunter
             
         }
 
+        public abstract  (Movement move = 0)
+        {
+
+        }
         public override string ToString()
         {
             return base.ToString();
