@@ -17,12 +17,30 @@ namespace GoblinHunter
         int mapMaxHGHT = 14;
         int mapMinWDTH = 4;
         
-           
+        Enemy[1] = 2;
+        
+        public List<List<Tile>> Map =  new List<List<Tile>>;
+        public int mapSize = 
+
         
 
-        Random r = new Random();
+        Random rHGHT = new Random();
 
-        Random rnd = new Random();
+        Random rWDTH = new Random();
+
+
+
+        void generateMap(Random rWDTH(), Random rHGHT(), int mapMinWDTH = 4, int mapMaxWDTH = 8, int mapSize)
+        {
+
+            mapSize = rWDTH(mapMinWDTH, mapMaxWDTH);
+            Console.WriteLine(rWDTH);
+
+
+
+
+        }
+
 
 
 
@@ -45,7 +63,7 @@ namespace GoblinHunter
 
         }
 
-        public void updateVision()
+        public void updateVision(Goblin, Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {
 
 
