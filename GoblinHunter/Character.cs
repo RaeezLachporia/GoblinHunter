@@ -77,13 +77,14 @@ namespace GoblinHunter
             
         }
 
-        public abstract  (Movement move = 0)
+       /* public abstract  (Movement move = 0)
+        {
+            Ask dylan and pieter on monday!!
+        }*/
+        public abstract override String ToString()
         {
 
-        }
-        public override string ToString()
-        {
-            return base.ToString();
+            return Character.ToString();
         }
 
 
