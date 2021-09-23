@@ -7,7 +7,7 @@ namespace GoblinHunter
     class Map : Enemy
     {
         Boolean keyPress = false;
-        Tile[,] tileArr = new Tile[];
+        Tile[,] tileArr = new Tile[4,4];
         //tile 14, 7. 14,6. 14,5. 14,4. 14,3. 14,2. 14,1. 14,0 = impassable
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
         public Enemy[] enemies = new Enemy[5];

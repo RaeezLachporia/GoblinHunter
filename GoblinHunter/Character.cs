@@ -81,11 +81,11 @@ namespace GoblinHunter
         {
             Ask dylan and pieter on monday!!
         }*/
-        public abstract override String ToString()
+        /*public abstract override String ToString()
         {
 
             return Character.ToString();
-        }
+        }*/
 
 
     }
