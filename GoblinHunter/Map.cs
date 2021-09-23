@@ -25,6 +25,15 @@ namespace GoblinHunter
         Random rHGHT = new Random();
         Random rWDTH = new Random();
 
+        public Map(int _X, int _Y, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT,int _mapMaxHGHT,int _mapMinWDTH,int _mapMaxWDTH) : base(_X, _Y, _TOT, _Damage, _MAXHP)
+        {
+            //the method here requires a random object that randomises the height and width of the map. we werent given one yet so im just praying what i did is fine.
+            mapMinHGHT = _mapMinHGHT;
+            mapMaxHGHT = _mapMaxHGHT;
+            mapMinWDTH = _mapMinWDTH;
+            mapMaxWDTH = _mapMaxWDTH;
+        }
+
         void generateMap(Random rWDTH, Random rHGHT, int mapMinWDTH = 4, int mapMaxWDTH = 8)
         {
 
@@ -35,14 +44,7 @@ namespace GoblinHunter
 
         public Goblin Character { get; private set; }
 
-        public Map(int _X, int _Y, TileType _TOT, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies) : base(_X, _Y, _TOT)
-        {
-            //the method here requires a random object that randomises the height and width of the map. we werent given one yet so im just praying what i did is fine.
-            mapMinHGHT = _mapMinHGHT;
-            mapMaxHGHT = _mapMaxHGHT;
-            mapMinWDTH = _mapMinWDTH;
-            mapMaxWDTH = _mapMaxWDTH;
-        }
+        
 
         public void heroObject()
         {
