@@ -47,7 +47,7 @@ namespace GoblinHunter
             Right
         }
 
-        public virtual void Attack()
+        public virtual void Attack(Character _Target)
         {
 
         }
@@ -66,7 +66,7 @@ namespace GoblinHunter
 
        
 
-        private int DistancTo()
+        private int DistancTo(Character _Target)
         {
             int distanceToTarget = 0;
             return distanceToTarget;

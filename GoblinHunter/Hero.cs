@@ -50,8 +50,9 @@ namespace GoblinHunter
         public override string ToString()
         {
             info += "Player Stats:";
-            info += "HP:";
-            return 
+            info += "HP:" + "MaxHp:";
+            info += "Damage: " + heroDamage;
+            return info;
         }
 
     }
