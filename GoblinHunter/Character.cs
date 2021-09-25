@@ -6,9 +6,11 @@ namespace GoblinHunter
 {
     abstract class Character : Tile
     {
-        Tile[] charVision = new Tile[4];
-        private int hp;
-        String Symbol;
+        protected Tile[] charVision = new Tile[4];
+        protected int hp;
+        protected String Symbol;
+        protected int maxHp;
+        protected Movement movement;
         public int Hp
         {
             get { return hp; }
@@ -77,10 +79,10 @@ namespace GoblinHunter
             
         }
 
-       /* public abstract  (Movement move = 0)
+         public abstract Movement  (Movement move = 0)
         {
-            Ask dylan and pieter on monday!!
-        }*/
+           
+        }
         /*public abstract override String ToString()
         {
 

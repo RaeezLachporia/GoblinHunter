@@ -16,7 +16,7 @@ namespace GoblinHunter
         int mapMaxWDTH = 8;
         int mapMaxHGHT = 14;
         int mapMinWDTH = 4;
-        
+       // Hero playerCharacter = new Hero
         //Enemy[1] = 2;
         
         public List<List<Tile>> tiles = new List<List<Tile>>();
@@ -46,12 +46,12 @@ namespace GoblinHunter
 
         
 
-        public void heroObject()
+        /*public void heroObject()
         {
             int heroLocX;
             int heroLocY;
 
-        }
+        }*/
 
         public void updateVision(Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {

@@ -42,9 +42,11 @@ namespace GoblinHunter
         }
         
 
-        public override ReturnMove()
+        public override Movement ReturnMove(Movement move =  Movement.noMovement)
         {
-            
+            Array Values = enum.Getv
+            Random randMovement = new Random();
+          Movement randomMovement  = (Movement)values
         }
 
         
