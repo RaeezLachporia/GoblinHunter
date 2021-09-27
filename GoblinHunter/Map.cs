@@ -44,8 +44,7 @@ namespace GoblinHunter
 
             tileArr = new Tile[rMAP.Next(mapMinWDTH, mapMaxWDTH), rMAP.Next(mapMinHGHT, mapMaxHGHT)];
 
-           
-            
+            tileArr[0, 0] = new Obstacle();
         }
 
         void generateMap()

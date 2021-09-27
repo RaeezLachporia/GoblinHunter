@@ -31,7 +31,7 @@ namespace GoblinHunter
             return direct;
 
         }
-
+       
 
         public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT,_Damage,_Health)
         {
@@ -42,14 +42,19 @@ namespace GoblinHunter
         }
         
 
-        public override Movement ReturnMove(Movement move =  Movement.noMovement)
+        public override ReturnMove()
         {
             Array Values = enum.Getv
             Random randMovement = new Random();
           Movement randomMovement  = (Movement)values
         }
 
-        
-
+        public Goblin(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+        {
+            Health = 10;
+            health = _Health;
+            Damage = 1;
+            Damage = _Damage;
+        }
     }
 }
