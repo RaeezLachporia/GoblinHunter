@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace GoblinHunter
 {
-    public partial class Form1 : Form
+    public partial class goblinHunterFRM : Form
     {
-        public Form1()
+        public goblinHunterFRM()
         {
             InitializeComponent();
         }
 
+        private void downButtonPress_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
