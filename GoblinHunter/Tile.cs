@@ -5,16 +5,17 @@ using System.Text;
 namespace GoblinHunter
 {
 
-    public enum TileType 
-    {
-        Hero,
-        Enemy,
-        Gold,
-        Weapon,
-    }
+    
 
-    abstract class Tile
+    public abstract class Tile
     {
+        public enum TileType 
+        {
+            Hero,
+            Enemy,
+            Gold,
+            Weapon,
+        }
         protected int x;
 
         public int X
