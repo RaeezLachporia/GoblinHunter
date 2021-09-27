@@ -40,7 +40,7 @@ namespace GoblinHunter
 
         }
 
-        protected enum Movement
+        public enum Movement
         {
             noMovement,
             Up,
@@ -74,7 +74,7 @@ namespace GoblinHunter
             return distanceToTarget;
         }
         
-        public void Move(Movement move)
+        public void move(Movement move)
         {
             
         }

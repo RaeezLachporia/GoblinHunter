@@ -12,22 +12,30 @@ namespace GoblinHunter
         //0,7. 1.7. 2,7. and so on, also impassable. also the opposite side.
         public Enemy[] enemies = new Enemy[5];
         Goblin[] gobVision = new Goblin[4];
+        Obstacle barrier;
         int mapMinHGHT = 8;
         int mapMaxHGHT = 14;
         int mapMaxWDTH = 8;
         int mapMinWDTH = 4;
-
+        int X;
+        int Y;
+        
         // Hero playerCharacter = new Hero
         //Enemy[1] = 2;
 
         public List<List<Tile>> tiles = new List<List<Tile>>();
         public int mapSizeWDTH;
         public int mapSizeHGHT;
+        
         Random rMAP = new Random();
+
 
 
         public Map(int _X, int _Y, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH) : base(_X, _Y, _TOT, _Damage, _MAXHP)
         {
+            _X = X;
+            _Y = Y;
+            _TOT = TOT;
             //the method here requires a random object that randomises the height and width of the map. we werent given one yet so im just praying what i did is fine.
             mapMinHGHT = _mapMinHGHT;
             mapMaxHGHT = _mapMaxHGHT;
@@ -36,7 +44,8 @@ namespace GoblinHunter
 
             tileArr = new Tile[rMAP.Next(mapMinWDTH, mapMaxWDTH), rMAP.Next(mapMinHGHT, mapMaxHGHT)];
 
-            tileArr[0, 0] = new Obstacle()
+           
+            
         }
 
         void generateMap()
@@ -85,6 +94,7 @@ namespace GoblinHunter
 
         }
 
+        
 
         //if x = [0, 0] 
         //{
