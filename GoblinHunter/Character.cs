@@ -40,7 +40,7 @@ namespace GoblinHunter
 
         }
 
-        public enum Movement
+        protected enum Movement
         {
             noMovement,
             Up,
