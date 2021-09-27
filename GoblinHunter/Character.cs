@@ -79,7 +79,7 @@ namespace GoblinHunter
             
         }
 
-         public abstract Movement  (Movement move = 0)
+         /*public abstract Movement  (Movement move = 0)
         {
            
         }
