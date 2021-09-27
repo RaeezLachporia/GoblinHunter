@@ -50,7 +50,7 @@ namespace GoblinHunter
         }
         public override Movement ReturnMove(Movement move = noMovement)
         {
-
+            
         }
         /*public override RetrunMove()
         {
