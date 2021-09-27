@@ -16,6 +16,7 @@ namespace GoblinHunter
         int mapMaxHGHT = 14;
         int mapMaxWDTH = 8;
         int mapMinWDTH = 4;
+
         // Hero playerCharacter = new Hero
         //Enemy[1] = 2;
 
@@ -47,7 +48,7 @@ namespace GoblinHunter
                     if (x == 0 || x == tileArr.GetLength(0)- 1 || y == 0 || y == tileArr.GetLength(1))
                     {
                         //barriers
-                
+                        
 
                     }
                     else
