@@ -6,6 +6,7 @@ namespace GoblinHunter
 {
     class Obstacle : Tile
     {
+        //declaring the constructors for the obstacle class 
         public Obstacle(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
         {
             X = _X;

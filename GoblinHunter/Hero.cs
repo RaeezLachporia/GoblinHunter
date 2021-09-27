@@ -7,12 +7,13 @@ namespace GoblinHunter
 {
      class Hero : Character
     {
-
+        //declaring the variables for the class
         int X, Y;
         private int hp;
         char heroSymbol;
         String info;
 
+        //declaring the getters and setters for the hp, max hp and hero damage 
         public int HP
         {
             get { return hp; }
@@ -36,7 +37,7 @@ namespace GoblinHunter
         }
         
         
-
+        //declaring the constructors and pulling the different variables 
         public Hero(int _X, int _Y, TileType _TOT,int _HP,int _MaxHP,int _heroDamage,char _hSymbol) : base(_X, _Y, _TOT)
         {
             X = _X;
@@ -56,6 +57,7 @@ namespace GoblinHunter
         {
 
         }*/
+        //this method displayss the information related to this class
         public override string ToString()
         {
             info += "Player Stats:";

@@ -9,6 +9,7 @@ namespace GoblinHunter
 
     public abstract class Tile
     {
+        //delcaring the enum for the movement parameters for the players and the enemies
         public enum TileType 
         {
             Hero,
@@ -16,6 +17,7 @@ namespace GoblinHunter
             Gold,
             Weapon,
         }
+        //declaring the getters and setter for the x, y and titletype for the method 
         protected int x;
 
         public int X
@@ -47,7 +49,7 @@ namespace GoblinHunter
             set { symbol = value; }
         }
 
-
+        //declaring a constructor with the neccessary perameters
         public Tile(int _X,int _Y,TileType _TOT,String _Symbol)
         {
             X = _X;

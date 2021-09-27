@@ -7,6 +7,7 @@ namespace GoblinHunter
 {
     public abstract class Character : Tile
     {
+        //declaring  variables for the class
         protected Tile[] charVision;
         protected int hp;
         protected String Symbol;
@@ -17,7 +18,8 @@ namespace GoblinHunter
         public int down = 3;
         public int left = 4;
         public int X,Y
-
+        
+        // declaring getters and setters for the class for hp, max hp and damage for the character
         public int Hp
         {
             get { return hp; }
@@ -39,13 +41,13 @@ namespace GoblinHunter
             get { return damage; }
             set { damage = value; }
         }
-
+        // declaring constructors for the character classes and pulling the neccessary variables
        public Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
         {
             _X = X;
             _Y = Y;
         }
-
+        // declaring constructors for the character classes and pulling the neccessary variables
         public Character(int _X, int _Y, TileType _TOT, string _Symbol,int _Hp, int _maxHp,int _Damage) : base(_X, _Y, _TOT, _Symbol)
         {
             Hp = _Hp;
@@ -54,7 +56,7 @@ namespace GoblinHunter
             charVision = new Tile[4];
         }
         
-
+        //declaring an enum list for the different movements for the charcter 
         public enum Movement
         {
             noMovement,
@@ -63,12 +65,12 @@ namespace GoblinHunter
             Left,
             Right
         }
-
+        //minuses the damage of the player by the enemies health 
         public virtual void Attack(Character _Target)
         {
             _Target.hp -= damage;
         }
-
+        //,ethod checks if the player and goblins are dead and returns the neccessary info accordingly
         public Boolean isDead()
         {
             Boolean isDead = false;
@@ -82,6 +84,7 @@ namespace GoblinHunter
             }
             
         }
+        //check if the character is in range of their target and does the math to determine how much damage is done for each range value
         public virtual bool checkRange(Character _Target)
         {
             int Range = 1;
@@ -98,14 +101,14 @@ namespace GoblinHunter
         }
 
        
-
+        //this method checks the distance from which the player is to the target 
         private int DistanceTo()
         {
             int distanceToTarget = 0;
             
             return distanceToTarget;
         }
-        
+        //this method determines the how the players will move on the grid by either plussing or minussing values to move the player 
         public void move(Movement move)
         {
             if(move == Movement.Up)
