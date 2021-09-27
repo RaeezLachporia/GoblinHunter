@@ -5,7 +5,7 @@ using System.Text;
 namespace GoblinHunter
 {
 
-    public enum TileType
+    public enum TileType 
     {
         Hero,
         Enemy,
@@ -15,7 +15,7 @@ namespace GoblinHunter
 
     abstract class Tile
     {
-        private int x;
+        protected int x;
 
         public int X
         {
@@ -23,7 +23,7 @@ namespace GoblinHunter
             set { x = value; }
         }
 
-        private int y;
+        protected int y;
 
         public int Y
         {

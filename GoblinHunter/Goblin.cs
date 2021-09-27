@@ -6,7 +6,7 @@ namespace GoblinHunter
 {
     class Goblin : Enemy
     {
-        Goblin [] gobVision = new Goblin[4];
+        public Goblin [] gobVision = new Goblin[4];
         int gobDirection;
 
 
@@ -27,17 +27,26 @@ namespace GoblinHunter
 
         public int directionRoll()
         {
-            int 
-            return 
+            int direct = 0;
+            return direct;
+
         }
        
 
-        
+        public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT,_Damage,_Health)
+        {
+            Health = 10;
+            health = _Health;
+            Damage = 1;
+            Damage = _Damage;
+        }
         
 
         public override ReturnMove()
         {
-            
+            Array Values = enum.Getv
+            Random randMovement = new Random();
+          Movement randomMovement  = (Movement)values
         }
 
         public Goblin(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)

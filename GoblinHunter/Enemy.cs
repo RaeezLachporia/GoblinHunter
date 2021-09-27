@@ -8,14 +8,25 @@ namespace GoblinHunter
     {
         public Random rnd = new Random();
         public String EnemyClassName = " ";
+        private int damage;
 
-        protected Enemy(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+        public int DAMAGE
         {
+            get { return damage; }
+            set { damage = value; }
+        }
+
+        private int maxHp;
+
+        public int MAXHP
+        {
+
         }
 
         public override string ToString()
         {
-            return 
+            return
+
         }
     }
 }

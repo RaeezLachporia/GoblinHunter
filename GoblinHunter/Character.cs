@@ -6,9 +6,11 @@ namespace GoblinHunter
 {
     abstract class Character : Tile
     {
-        Tile[] charVision = new Tile[4];
-        private int hp;
-        
+        protected Tile[] charVision = new Tile[4];
+        protected int hp;
+        protected String Symbol;
+        protected int maxHp;
+        protected Movement movement;
         public int Hp
         {
             get { return hp; }
@@ -37,9 +39,11 @@ namespace GoblinHunter
 
        
 
-        
+        protected Character(int _X, int _Y, TileType _TOT) : base(_X, _Y, _TOT)
+        {
+        }
 
-        public enum Movement
+        protected enum Movement
         {
             noMovement,
             Up,
@@ -48,7 +52,7 @@ namespace GoblinHunter
             Right
         }
 
-        public virtual void Attack()
+        public virtual void Attack(Character _Target)
         {
 
         }
@@ -68,7 +72,7 @@ namespace GoblinHunter
 
        
 
-        private int DistanceTo()
+        private int DistancTo()
         {
             int distanceToTarget = 0;
             return distanceToTarget;
@@ -79,10 +83,15 @@ namespace GoblinHunter
             
         }
 
-        public override string ToString()
+         /*public abstract Movement  (Movement move = 0)
         {
-            return base.ToString();
+           
         }
+        /*public abstract override String ToString()
+        {
+
+            return Character.ToString();
+        }*/
 
 
     }
