@@ -8,7 +8,7 @@ namespace GoblinHunter
     {
         Tile[] charVision = new Tile[4];
         private int hp;
-        String Symbol
+        
         public int Hp
         {
             get { return hp; }
@@ -25,6 +25,10 @@ namespace GoblinHunter
 
         private int damage;
 
+        protected Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+        {
+        }
+
         public int Damage
         {
             get { return damage; }
@@ -33,9 +37,7 @@ namespace GoblinHunter
 
        
 
-        protected Character(int _X, int _Y, TileType _TOT) : base(_X, _Y, _TOT)
-        {
-        }
+        
 
         public enum Movement
         {
@@ -60,12 +62,13 @@ namespace GoblinHunter
         {
             int Range = 1;
             Boolean inRange = false;
+            DistanceTo();
             return inRange;
         }
 
        
 
-        private int DistancTo()
+        private int DistanceTo()
         {
             int distanceToTarget = 0;
             return distanceToTarget;

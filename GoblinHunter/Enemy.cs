@@ -8,9 +8,9 @@ namespace GoblinHunter
     {
         public Random rnd = new Random();
         public String EnemyClassName = " ";
-        protected Enemy(int _X, int _Y, TileType _TOT) : base(_X, _Y, _TOT)
-        {
 
+        protected Enemy(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+        {
         }
 
         public override string ToString()

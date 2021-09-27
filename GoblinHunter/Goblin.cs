@@ -30,15 +30,9 @@ namespace GoblinHunter
             int 
             return 
         }
+       
 
-
-        public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT)
-        {
-            Health = 10;
-            health = _Health;
-            Damage = 1;
-            Damage = _Damage;
-        }
+        
         
 
         public override ReturnMove()
@@ -46,7 +40,12 @@ namespace GoblinHunter
             
         }
 
-        
-
+        public Goblin(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+        {
+            Health = 10;
+            health = _Health;
+            Damage = 1;
+            Damage = _Damage;
+        }
     }
 }
