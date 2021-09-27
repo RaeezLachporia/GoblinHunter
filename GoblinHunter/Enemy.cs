@@ -20,7 +20,8 @@ namespace GoblinHunter
 
         public int MAXHP
         {
-
+            get { return maxHp; }
+            set { maxHp = value;}
         }
 
         public override string ToString()
