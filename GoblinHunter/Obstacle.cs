@@ -13,7 +13,7 @@ namespace GoblinHunter
             TOT = _TOT;
         }
 
-/*        public int ObstacleX()
+       public int ObstacleX()
         {
             return base.X;
         }
