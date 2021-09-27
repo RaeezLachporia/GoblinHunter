@@ -106,7 +106,7 @@ namespace GoblinHunter
             return distanceToTarget;
         }
         
-        public void Move(Movement move)
+        public void move(Movement move)
         {
             if(move == Movement.Up)
             {

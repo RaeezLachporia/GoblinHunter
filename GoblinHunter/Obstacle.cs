@@ -8,9 +8,12 @@ namespace GoblinHunter
     {
         public Obstacle(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
         {
+            X = _X;
+            Y = _Y;
+            TOT = _TOT;
         }
 
-        public int ObstacleX()
+/*        public int ObstacleX()
         {
             return base.X;
         }
@@ -18,8 +21,8 @@ namespace GoblinHunter
         public int ObstacleY()
         {
             return base.Y;
-        }
-        
+        }*/
+
 
 
     }
