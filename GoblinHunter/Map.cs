@@ -58,26 +58,17 @@ namespace GoblinHunter
                     {
                         //barriers
                         
-
                     }
                     else
                     {
                         //create empty here
 
-
-
                     }
                 }
-
-
             }
-
-
-
         }
 
         public Goblin Character { get; private set; }
-
 
         //declaring the hero objects to be used in the class
         public void heroObject()
@@ -89,9 +80,7 @@ namespace GoblinHunter
         //a method that updates the enemies vision when the player moves 
         public void updateVision(Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {
-
-
-
+         //
         }
     }
 }
