@@ -40,7 +40,7 @@ namespace GoblinHunter
 
         }
 
-        public enum Movement
+        protected enum Movement
         {
             noMovement,
             Up,
@@ -79,7 +79,7 @@ namespace GoblinHunter
             
         }
 
-         public abstract Movement  (Movement move = 0)
+         /*public abstract Movement  (Movement move = 0)
         {
            
         }
