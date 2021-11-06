@@ -37,6 +37,9 @@ namespace GoblinHunter
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.mapContainer = new System.Windows.Forms.GroupBox();
+            this.mapLBL = new System.Windows.Forms.Label();
+            this.mapContainer.SuspendLayout();
             this.SuspendLayout();
             // 
             // upButtonPress
@@ -112,11 +115,31 @@ namespace GoblinHunter
             this.label4.TabIndex = 7;
             this.label4.Text = "Hero Position";
             // 
+            // mapContainer
+            // 
+            this.mapContainer.Controls.Add(this.mapLBL);
+            this.mapContainer.Location = new System.Drawing.Point(47, 47);
+            this.mapContainer.Name = "mapContainer";
+            this.mapContainer.Size = new System.Drawing.Size(255, 275);
+            this.mapContainer.TabIndex = 8;
+            this.mapContainer.TabStop = false;
+            this.mapContainer.Text = "Goblin Map";
+            // 
+            // mapLBL
+            // 
+            this.mapLBL.AutoSize = true;
+            this.mapLBL.Location = new System.Drawing.Point(19, 30);
+            this.mapLBL.Name = "mapLBL";
+            this.mapLBL.Size = new System.Drawing.Size(101, 15);
+            this.mapLBL.TabIndex = 0;
+            this.mapLBL.Text = "MAPPRELAUNCH";
+            // 
             // goblinHunterFRM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(679, 530);
+            this.Controls.Add(this.mapContainer);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -125,9 +148,11 @@ namespace GoblinHunter
             this.Controls.Add(this.rightButtonPress);
             this.Controls.Add(this.leftButtonPress);
             this.Controls.Add(this.upButtonPress);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "goblinHunterFRM";
             this.Text = "Goblin Hunter";
+            this.mapContainer.ResumeLayout(false);
+            this.mapContainer.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,6 +168,8 @@ namespace GoblinHunter
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.GroupBox mapContainer;
+        private System.Windows.Forms.Label mapLBL;
     }
 }
 

@@ -163,9 +163,7 @@ namespace GoblinHunter
 
         public void updateVision(Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {
-
-
-
+         //
         }
     }
 }

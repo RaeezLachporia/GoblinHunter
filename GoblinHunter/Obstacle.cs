@@ -22,7 +22,7 @@ namespace GoblinHunter
         public int ObstacleY()
         {
             return base.Y;
-        }*/
+        }//
 
 
 
