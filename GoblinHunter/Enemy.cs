@@ -14,7 +14,10 @@ namespace GoblinHunter
         int enemyY;
         public Goblin[] GobVision;
         private int edamage;
-       
+        
+        
+        
+        
         //declaring th egetters and setters for the damage and maxhp for the class
         public int eDAMAGE
         {
@@ -33,18 +36,14 @@ namespace GoblinHunter
             get { return emaxHp; }
             set { emaxHp = value;}
         }
-        /*public Enemy(int _EnemyX, int _EnemyY,int _eMAXHP, int _eDamage, String _ESYMBOL, TileType _TOT)
-        {
-            enemyX = _EnemyX;
-            enemyY = _EnemyY;
-            edamage = _eDamage;
-            emaxHp = _eMAXHP;
-
-        }*/
+        
         public override string ToString()
         {
             return;
 
         }
     }
+  
+
 }
+
