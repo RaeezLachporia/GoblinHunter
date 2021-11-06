@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using static GoblinHunter.Tile
+using static GoblinHunter.Tile;
 
 namespace GoblinHunter
 {
@@ -17,7 +17,7 @@ namespace GoblinHunter
         public int right = 2;
         public int down = 3;
         public int left = 4;
-        public int X,Y
+        public int X, Y;
         
         // declaring getters and setters for the class for hp, max hp and damage for the character
         public int Hp
@@ -42,13 +42,13 @@ namespace GoblinHunter
             set { damage = value; }
         }
         // declaring constructors for the character classes and pulling the neccessary variables
-       public Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+       /*public Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
         {
             _X = X;
             _Y = Y;
-        }
+        }*/
         // declaring constructors for the character classes and pulling the neccessary variables
-        public Character(int _X, int _Y, TileType _TOT, string _Symbol,int _Hp, int _maxHp,int _Damage) : base(_X, _Y, _TOT, _Symbol)
+        public Character(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol,int _Hp, int _maxHp,int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol)
         {
             Hp = _Hp;
             maxHp = _maxHp;
@@ -89,7 +89,7 @@ namespace GoblinHunter
         {
             int Range = 1;
             Boolean inRange = false;
-            if(DistanceTo(_Target) < Range)
+            if(DistanceTo() < Range)
             {
                 return true;
             }
@@ -111,22 +111,20 @@ namespace GoblinHunter
         //this method determines the how the players will move on the grid by either plussing or minussing values to move the player 
         public void move(Movement move)
         {
-            if(move == Movement.Up)
-            {
-                Y+=1;
-            }
-            else if(move == Movement.Right)
-            {
-                X += 1 
-            }
-            else if (move == Movement.Down)
-            {
-                Y -= 1
-            }
-            else if (move == Movement.Left)
-            {
-                X -= 1;
-            }
+            
+            
+                 switch(move)
+                  {
+                case Movement.Up:Y--;
+                    break;
+                case Movement.Down:Y++;
+                    break;
+                case Movement.Left:X--;
+                    break;
+                case Movement.Right:X++;
+                    break;
+                 }
+        
         }
 
         /*public abstract Movement  (Movement move = 0)

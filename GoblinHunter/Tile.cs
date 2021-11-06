@@ -16,6 +16,8 @@ namespace GoblinHunter
             Enemy,
             Gold,
             Weapon,
+            Empty,
+            Barrier
         }
         //declaring the getters and setter for the x, y and titletype for the method 
         protected int x;

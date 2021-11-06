@@ -9,23 +9,38 @@ namespace GoblinHunter
         //declaring the variables for the enemy class
         public Random rnd = new Random();
         public String EnemyClassName = " ";
-        private int damage;
-
+        String enemySymbol;
+        int enemyX;
+        int enemyY;
+        public Goblin[] GobVision;
+        private int edamage;
+       
         //declaring th egetters and setters for the damage and maxhp for the class
-        public int DAMAGE
+        public int eDAMAGE
         {
-            get { return damage; }
-            set { damage = value; }
+            get { return edamage; }
+            set { edamage = value; }
         }
 
-        private int maxHp;
+        private int emaxHp;
 
-        public int MAXHP
+        protected Enemy(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
         {
-            get { return maxHp; }
-            set { maxHp = value;}
         }
 
+        public int eMAXHP
+        {
+            get { return emaxHp; }
+            set { emaxHp = value;}
+        }
+        /*public Enemy(int _EnemyX, int _EnemyY,int _eMAXHP, int _eDamage, String _ESYMBOL, TileType _TOT)
+        {
+            enemyX = _EnemyX;
+            enemyY = _EnemyY;
+            edamage = _eDamage;
+            emaxHp = _eMAXHP;
+
+        }*/
         public override string ToString()
         {
             return;

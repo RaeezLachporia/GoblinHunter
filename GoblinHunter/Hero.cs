@@ -8,7 +8,7 @@ namespace GoblinHunter
      class Hero : Character
     {
         //declaring the variables for the class
-        int X, Y;
+        int heroX, heroY;
         private int hp;
         char heroSymbol;
         String info;
@@ -30,6 +30,10 @@ namespace GoblinHunter
 
         private int heroDamage;
 
+        public Hero(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
+        {
+        }
+
         public int HERODAMAGE
         {
             get { return heroDamage; }
@@ -38,20 +42,38 @@ namespace GoblinHunter
         
         
         //declaring the constructors and pulling the different variables 
-        public Hero(int _X, int _Y, TileType _TOT,int _HP,int _MaxHP,int _heroDamage,char _hSymbol) : base(_X, _Y, _TOT)
+        /*public Hero(int _HeroX, int _HeroY, TileType _TOT,int _HP,int _MaxHP,int _heroDamage,char _hSymbol) : base(_X, _Y, _TOT)
         {
-            X = _X;
-            Y = _Y;
+            heroX = _HeroX;
+            heroY = _HeroY;
             MAXHP = _MaxHP;
             HP = _HP;
-            heroDamage = 2;
-            heroDamage = _heroDamage;
             _hSymbol = heroSymbol;
 
-        }
-        public override Movement ReturnMove(Movement move = noMovement)
+        }*/
+        public  Movement noMovement()
         {
-            
+            if(movement != Movement.Down)
+            {
+                return Movement.noMovement;
+            }
+            else if(movement != Movement.Up)
+            {
+                return Movement.noMovement;
+            }
+            else if (movement != Movement.Left)
+            {
+                return Movement.noMovement;
+            }
+            else if(movement != Movement.Right)
+            {
+                return Movement.noMovement;
+            }
+            else
+            {
+                return Movement.noMovement;
+            }
+              
         }
         /*public override RetrunMove()
         {

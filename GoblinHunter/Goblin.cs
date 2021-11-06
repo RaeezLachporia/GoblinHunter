@@ -6,12 +6,11 @@ namespace GoblinHunter
 {
     class Goblin : Enemy
     {
-        public Goblin [] gobVision = new Goblin[4];
+        public Goblin[] gobVision;
         int gobDirection;
-
+        public Random rnd = new Random();
 
         private int health;
-
         public int Health
         {
             get { return health; }
@@ -25,36 +24,46 @@ namespace GoblinHunter
             set { damage = value; }
         }
 
-        public int directionRoll()
+        public Goblin(int _EnemyX, int _EnemyY, TileType _TOT, int _eMAXHP, String _ESYMBOL = "G", int _HP = 10, int _eDamage = 1) : base(_EnemyX, _EnemyY,_eMAXHP,_eDamage,_ESYMBOL, _TOT)
         {
-            int direct = 0;
-            return direct;
 
         }
+        public  Movement GetMovement ()
+        {
+            int RandomTileIndex = rnd.Next(0, gobVision.Length);
+            while (gobVision[RandomTileIndex].TOT.Equals(typeof(EmptyTile)))
+            {
+                RandomTileIndex = rnd.Next(0, gobVision.Length);
+            }
+            if (gobVision[RandomTileIndex].X > X)
+            {
+                return Movement.Right;
+            }
+            else if (gobVision[RandomTileIndex].X < X)
+            {
+                return Movement.Left;
+            }
+            else if (gobVision[RandomTileIndex].Y > Y)
+            {
+                return Movement.Up;
+            }
+            else if (gobVision[RandomTileIndex].Y < Y)
+            {
+                return Movement.Down;
+            }
+            else
+            {
+                return Movement.noMovement;
+            }
+        }
+
+    }
+
+
        
 
-        public Goblin(int _X, int _Y, TileType _TOT,int _Health,int _Damage) : base(_X, _Y, _TOT,_Damage,_Health)
-        {
-            Health = 10;
-            health = _Health;
-            Damage = 1;
-            Damage = _Damage;
-        }
-        
 
-        public override ReturnMove()
-        {
-            Array Values = enum.Getv
-            Random randMovement = new Random();
-          Movement randomMovement  = (Movement)values
-        }
 
-        public Goblin(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
-        {
-            Health = 10;
-            health = _Health;
-            Damage = 1;
-            Damage = _Damage;
-        }
-    }
+
+    
 }
