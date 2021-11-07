@@ -89,7 +89,7 @@ namespace GoblinHunter
         {
             int Range = 1;
             Boolean inRange = false;
-            if(DistanceTo() < Range)
+            if(DistanceTo(_Target) < Range)
             {
                 return true;
             }
@@ -102,19 +102,22 @@ namespace GoblinHunter
 
        
         //this method checks the distance from which the player is to the target 
-        private int DistanceTo()
+        private int DistanceTo(Character _Target)
         {
-            int distanceToTarget = 0;
-            
+            //int distanceToTarget = 0;         ---> becuase it set the value to 0
+
+            int _Xspaces = X - _Target.X;
+            int _Yspaces = Y - _Target.Y;
+
+           int distanceToTarget = Math.Abs(_Xspaces + _Yspaces); // Keeps all values positive
+
             return distanceToTarget;
         }
         //this method determines the how the players will move on the grid by either plussing or minussing values to move the player 
         public void move(Movement move)
         {
-            
-            
-                 switch(move)
-                  {
+                switch(move)
+                 {
                 case Movement.Up:Y--;
                     break;
                 case Movement.Down:Y++;
@@ -124,7 +127,8 @@ namespace GoblinHunter
                 case Movement.Right:X++;
                     break;
                  }
-        
+
+            movement = move; //store current move
         }
 
         /*public abstract Movement  (Movement move = 0)
@@ -141,5 +145,8 @@ namespace GoblinHunter
         {
             return base.ToString();
         }
+
+        public abstract int ReturnMove();
+      
     }
 }

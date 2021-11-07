@@ -11,7 +11,9 @@ namespace GoblinHunter
            
         }
 
-        
+
+        public abstract string ToString();
+
     }
     
 }
