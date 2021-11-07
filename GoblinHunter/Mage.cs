@@ -4,9 +4,14 @@ using System.Text;
 
 namespace GoblinHunter
 {
-    class Mage
+    3internal class Mage : Enemy
     {
         private int mHealth;
+
+        public Mage(int _X, int _Y, TileType _TOT, string _Symbol, int _HP) : base(_X, _Y, _TOT, _Symbol, _HP, 5 ,5)// We set a maxHp value not an HP
+        {
+           
+        }
 
         public int MHEALTH
         {
@@ -22,6 +27,16 @@ namespace GoblinHunter
             set { mDamage = value; }
         }
 
+        public override int ReturnMove()
+        {
+            return 0;
+        }
 
+        public override virtual bool checkRange(Character _Target)
+        {
+            if (Dis)
+            {
+
+            }
+        }
     }
-}
