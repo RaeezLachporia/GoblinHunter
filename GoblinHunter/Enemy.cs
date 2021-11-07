@@ -39,7 +39,8 @@ namespace GoblinHunter
         
         public override string ToString()
         {
-            return;
+
+            return ;
 
         }
     }
