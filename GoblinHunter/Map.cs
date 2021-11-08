@@ -53,8 +53,8 @@ namespace GoblinHunter
            
            ENEMIES = new List<Enemy>();
            generateMap();
-
-            UpdateVision();
+            
+           UpdateVision();
            
         }
 
@@ -68,9 +68,18 @@ namespace GoblinHunter
                 if (E.X >0)
 	            {
                     E.GobVision.Add(MAPCONTAINER[E.X - 1, E.Y]);
-
-
-
+                }
+                if(E.X < MAPWIDTH)
+                {
+                    E.GobVision.Add(MAPCONTAINER[E.X + 1, E.Y]);
+                }
+                if(E.Y > 0)
+                {
+                    E.GobVision.Add(MAPCONTAINER[E.X, Y - 1]);
+                }
+                if(E.Y< 0)
+                {
+                    E.GobVision.Add(MAPCONTAINER[E.X, E.Y + 1]);
                 }
 
             }
@@ -164,7 +173,7 @@ namespace GoblinHunter
 
         public void updateVision(Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {
-         //
+         
         }
 
         public override int ReturnMove()
