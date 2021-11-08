@@ -6,7 +6,7 @@ namespace GoblinHunter
 {
     class Goblin : Enemy
     {
-        public Goblin[] gobVision;
+       // public Goblin[] gobVision;
         int gobDirection;
         public Random rnd = new Random();
 
@@ -18,36 +18,37 @@ namespace GoblinHunter
         }
 
         private int damage;
+
+        public Goblin(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
+        {
+        }
+
         public int Damage
         {
             get { return damage; }
             set { damage = value; }
         }
 
-        public Goblin(int _EnemyX, int _EnemyY, TileType _TOT, int _eMAXHP, String _ESYMBOL = "G", int _HP = 10, int _eDamage = 1) : base(_EnemyX, _EnemyY,_eMAXHP,_eDamage,_ESYMBOL, _TOT)
-        {
-
-        }
         public  Movement GetMovement ()
         {
-            int RandomTileIndex = rnd.Next(0, gobVision.Length);
-            while (gobVision[RandomTileIndex].TOT.Equals(typeof(EmptyTile)))
+            int RandomTileIndex = rnd.Next(0, GobVision.Count);
+            while (GobVision[RandomTileIndex].TOT.Equals(typeof(EmptyTile)))
             {
-                RandomTileIndex = rnd.Next(0, gobVision.Length);
+                RandomTileIndex = rnd.Next(0, GobVision.Count);
             }
-            if (gobVision[RandomTileIndex].X > X)
+            if (GobVision[RandomTileIndex].X > X)
             {
                 return Movement.Right;
             }
-            else if (gobVision[RandomTileIndex].X < X)
+            else if (GobVision[RandomTileIndex].X < X)
             {
                 return Movement.Left;
             }
-            else if (gobVision[RandomTileIndex].Y > Y)
+            else if (GobVision[RandomTileIndex].Y > Y)
             {
                 return Movement.Up;
             }
-            else if (gobVision[RandomTileIndex].Y < Y)
+            else if (GobVision[RandomTileIndex].Y < Y)
             {
                 return Movement.Down;
             }
@@ -57,6 +58,10 @@ namespace GoblinHunter
             }
         }
 
+        public override int ReturnMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

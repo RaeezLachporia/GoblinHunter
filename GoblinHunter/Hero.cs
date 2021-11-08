@@ -88,6 +88,10 @@ namespace GoblinHunter
             return info;
         }
 
+        public override int ReturnMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

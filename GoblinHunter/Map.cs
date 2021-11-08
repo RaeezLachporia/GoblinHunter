@@ -44,7 +44,7 @@ namespace GoblinHunter
         protected Random RANDOM_NUMBER_GENERATOR = new Random();
 
         //declared a constructor for the class ad declaring newer variables for the minimum and maximum variables for the height and width
-        public Map(int _EnemyX,int _EnemyY,int _eMAXHP,int _eDamage,String _ESYMBOL,TileType _TOT,int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES) : base(_EnemyX, _EnemyY,_eMAXHP,_eDamage,_ESYMBOL, _TOT)
+        public Map(int _EnemyX,int _EnemyY,String _ESYMBOL,TileType _TOT,int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES) : base(_EnemyX, _EnemyY,_TOT,"  ",10,10,10)
         {
            MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH,_MAXWIDTH);
            MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT,_MAXHEIGHT);
@@ -54,13 +54,11 @@ namespace GoblinHunter
            ENEMIES = new List<Enemy>();
            generateMap();
 
-           updateVision(_MINHEIGHT,_MAXHEIGHT,_MINWIDTH,_MAXWIDTH,_NUMBEROFENEMIES);
+            UpdateVision();
            
         }
 
-        public Map(int _EnemyX, int _EnemyY, int _eMAXHP, int _eDamage, string _ESYMBOL, TileType _TOT) : base(_EnemyX, _EnemyY, _eMAXHP, _eDamage, _ESYMBOL, _TOT)
-        {
-        }
+       
 
         public void UpdateVision()
         {
@@ -69,8 +67,11 @@ namespace GoblinHunter
                 
                 if (E.X >0)
 	            {
-                 E.Add(MAPCONTAINER[E.X-1,E.Y]);   
-	            }
+                    E.GobVision.Add(MAPCONTAINER[E.X - 1, E.Y]);
+
+
+
+                }
 
             }
         }
@@ -112,7 +113,7 @@ namespace GoblinHunter
                     MAPCONTAINER[X,Y] = NewBarrier;
                     break;
                 case TileType.Empty:
-                    EmptyTile NewEmptyTile = new EmptyTile();
+                    EmptyTile NewEmptyTile = new EmptyTile(X,Y,TOT," ");
                     MAPCONTAINER[X,Y] = NewEmptyTile;
                     break;
                 case TileType.Hero:
@@ -125,7 +126,7 @@ namespace GoblinHunter
                         heroY = RANDOM_NUMBER_GENERATOR.Next(0,MAPHEIGHT);
                     }
 
-                    Hero newHero = new Hero(heroX, heroY, TOT, 100, 100, 2, 'H');
+                    Hero newHero = new Hero(heroX, heroY, TOT, "H", 10, 100,2);
                     PLAYERCHARACTER  = newHero;
                     MAPCONTAINER[heroX,heroY] = newHero;
                     break;
@@ -139,7 +140,7 @@ namespace GoblinHunter
                         enemyY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
                     }
 
-                    Goblin NewEnemy = new Goblin(enemyX, enemyY, TOT,eMAXHP,"G", 10,1);
+                    Goblin NewEnemy = new Goblin(enemyX, enemyY, TOT,"G", eMAXHP, 10,1);
                     ENEMIES.Add(NewEnemy);
                     MAPCONTAINER[enemyX,enemyY] = NewEnemy;
                     break;
@@ -164,6 +165,11 @@ namespace GoblinHunter
         public void updateVision(Goblin gobVision, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _enemies)
         {
          //
+        }
+
+        public override int ReturnMove()
+        {
+            throw new NotImplementedException();
         }
     }
 }

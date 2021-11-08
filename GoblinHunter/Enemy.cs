@@ -12,7 +12,7 @@ namespace GoblinHunter
         String enemySymbol;
         int enemyX;
         int enemyY;
-        public Goblin[] GobVision;
+        public List<Tile> GobVision;
         private int edamage;
         
         
@@ -29,6 +29,7 @@ namespace GoblinHunter
 
         protected Enemy(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol, _Hp, _maxHp, _Damage)
         {
+            GobVision = new List<Tile>();
         }
 
         public int eMAXHP

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace GoblinHunter
 {
-    3internal class Mage : Enemy
+    internal class Mage : Enemy
     {
         private int mHealth;
 
@@ -39,4 +39,5 @@ namespace GoblinHunter
 
             }
         }
+    }
     }
