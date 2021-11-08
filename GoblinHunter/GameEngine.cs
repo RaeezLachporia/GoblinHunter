@@ -24,6 +24,7 @@ namespace GoblinHunter
         {
             game = new Map();
 
+
         }
         //sets the symbols for the player, goblin, obstacles and empty tiles 
         public char enemy = 'G';
