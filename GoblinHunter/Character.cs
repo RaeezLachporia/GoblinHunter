@@ -18,7 +18,8 @@ namespace GoblinHunter
         public int down = 3;
         public int left = 4;
         public int X, Y;
-        
+        int goldPurse = 0;
+
         // declaring getters and setters for the class for hp, max hp and damage for the character
         public int Hp
         {
@@ -42,20 +43,20 @@ namespace GoblinHunter
             set { damage = value; }
         }
         // declaring constructors for the character classes and pulling the neccessary variables
-       /*public Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
-        {
-            _X = X;
-            _Y = Y;
-        }*/
+        /*public Character(int _X, int _Y, TileType _TOT, string _Symbol) : base(_X, _Y, _TOT, _Symbol)
+         {
+             _X = X;
+             _Y = Y;
+         }*/
         // declaring constructors for the character classes and pulling the neccessary variables
-        public Character(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol,int _Hp, int _maxHp,int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol)
+        public Character(int _CharacterX, int _CharacterY, TileType _TOT, string _Symbol, int _Hp, int _maxHp, int _Damage) : base(_CharacterX, _CharacterY, _TOT, _Symbol)
         {
             Hp = _Hp;
             maxHp = _maxHp;
             Damage = _Damage;
             charVision = new Tile[4];
         }
-        
+
         //declaring an enum list for the different movements for the charcter 
         public enum Movement
         {
@@ -74,7 +75,7 @@ namespace GoblinHunter
         public Boolean isDead()
         {
             Boolean isDead = false;
-            if(hp <= 0)
+            if (hp <= 0)
             {
                 return isDead;
             }
@@ -82,14 +83,14 @@ namespace GoblinHunter
             {
                 return true;
             }
-            
+
         }
         //check if the character is in range of their target and does the math to determine how much damage is done for each range value
         public virtual bool checkRange(Character _Target)
         {
             int Range = 1;
             Boolean inRange = false;
-            if(DistanceTo(_Target) < Range)
+            if (DistanceTo(_Target) < Range)
             {
                 return true;
             }
@@ -100,7 +101,7 @@ namespace GoblinHunter
             return inRange;
         }
 
-       
+
         //this method checks the distance from which the player is to the target 
         private int DistanceTo(Character _Target)
         {
@@ -109,24 +110,24 @@ namespace GoblinHunter
             int _Xspaces = X - _Target.X;
             int _Yspaces = Y - _Target.Y;
 
-           int distanceToTarget = Math.Abs(_Xspaces + _Yspaces); // Keeps all values positive
+            int distanceToTarget = Math.Abs(_Xspaces + _Yspaces); // Keeps all values positive
 
             return distanceToTarget;
         }
         //this method determines the how the players will move on the grid by either plussing or minussing values to move the player 
         public void move(Movement move)
         {
-                switch(move)
-                 {
-                case Movement.Up:Y--;
+            switch (move)
+            {
+                case Movement.Up: Y--;
                     break;
-                case Movement.Down:Y++;
+                case Movement.Down: Y++;
                     break;
-                case Movement.Left:X--;
+                case Movement.Left: X--;
                     break;
-                case Movement.Right:X++;
+                case Movement.Right: X++;
                     break;
-                 }
+            }
 
             movement = move; //store current move
         }
@@ -147,6 +148,17 @@ namespace GoblinHunter
         }
 
         public abstract int ReturnMove();
+
+        public void Pickup(Item i)
+        { 
+            if (i is Gold)
+            {
+                Gold gold = i as Gold;
+                goldPurse = goldPurse + gold.GOLD;
+            }
+        }
+
+
       
     }
 }

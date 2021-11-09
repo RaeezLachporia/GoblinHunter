@@ -32,12 +32,12 @@ namespace GoblinHunter
             return 0;
         }
 
-        public override virtual bool checkRange(Character _Target)
+  /*      public override virtual bool checkRange(Character _Target)
         {
             if (Dis)
             {
 
             }
-        }
+        }*/
     }
     }

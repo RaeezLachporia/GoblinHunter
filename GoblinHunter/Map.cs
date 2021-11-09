@@ -38,31 +38,35 @@ namespace GoblinHunter
             get { return mapheight;}
             set { mapheight = value;}
         }
-        
-       
+        private List<Item> items;
+        public List<Item> ITEMS
+        {
+            get { return items; }
+            set { items = value; }
+        }
+
         //created a random number generator to determine the random values for the grid 
         protected Random RANDOM_NUMBER_GENERATOR = new Random();
 
         //declared a constructor for the class ad declaring newer variables for the minimum and maximum variables for the height and width
-        public Map(int _EnemyX,int _EnemyY,String _ESYMBOL,TileType _TOT,int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES) : base(_EnemyX, _EnemyY,_TOT,"  ",10,10,10)
+        public Map(int _EnemyX,int _EnemyY,String _ESYMBOL,TileType _TOT,int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES, int _NUMGOLD) : base(_EnemyX, _EnemyY,_TOT,"  ",10,10,10)
         {
            MAPWIDTH = RANDOM_NUMBER_GENERATOR.Next(_MINWIDTH,_MAXWIDTH);
            MAPHEIGHT = RANDOM_NUMBER_GENERATOR.Next(_MINHEIGHT,_MAXHEIGHT);
            
            MAPCONTAINER = new Tile[MAPWIDTH,MAPHEIGHT];
            
-           ENEMIES = new List<Enemy>();
+           ENEMIES = new List<Enemy>(_NUMBEROFENEMIES);
            generateMap();
-            
            UpdateVision();
+
+            ITEMS = new List<Item>(_NUMGOLD);
            
         }
 
-       
-
         public void UpdateVision()
         {
-            foreach(Enemy E in enemies)
+            foreach(Enemy E in enemies)// What is happing in GOBVISION
             {
                 
                 if (E.X >0)
@@ -149,11 +153,34 @@ namespace GoblinHunter
                         enemyY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
                     }
 
-                    Goblin NewEnemy = new Goblin(enemyX, enemyY, TOT,"G", eMAXHP, 10,1);
+                    Enemy NewEnemy = null;
+
+                    Random rnd = new Random();
+                    int rndNumber = rnd.Next(1, 99);
+                    if (rndNumber%2 == 0)
+                    {
+                        NewEnemy = new Goblin(enemyX, enemyY, TOT, "G", eMAXHP, 10, 1);
+                    } else 
+                    {
+                        NewEnemy = new Mage(enemyX, enemyY, TOT, "M", eMAXHP);
+                    }
+                  
                     ENEMIES.Add(NewEnemy);
                     MAPCONTAINER[enemyX,enemyY] = NewEnemy;
                     break;
                 case TileType.Gold:
+                    int goldX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
+                    int goldY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
+
+                    while (MAPCONTAINER[goldX, goldY].TOT != TileType.Empty)
+                    {
+                       goldX = RANDOM_NUMBER_GENERATOR.Next(0, MAPWIDTH);
+                        goldY = RANDOM_NUMBER_GENERATOR.Next(0, MAPHEIGHT);
+                    }
+
+                    Gold newGold = new Gold(goldX, goldY, TOT, "G");
+                    MAPCONTAINER[goldX, goldY] = newGold;
+                   
                     break;
             }
         }
