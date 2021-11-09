@@ -6,6 +6,8 @@ namespace GoblinHunter
 {
     class GameEngine : Map
     {
+        Map mp = new Map();
+        
         // declaring the getters and the setter for the values used in the class
         private Map game;
 
@@ -19,12 +21,22 @@ namespace GoblinHunter
         {
             return;
         }
+
+        public Map(int _EnemyX, int _EnemyY, String _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES) : base()
+        {
+            
+        }
         //declaring the constructor and pulling the variables that are neccessary in this class
         public GameEngine(int _X, int _Y, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH) : base(_X, _Y," ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH,0)
         {
-            game = new Map();
+            
 
 
+        }
+
+        public void Save()
+        {
+            
         }
         //sets the symbols for the player, goblin, obstacles and empty tiles 
         public char enemy = 'G';
