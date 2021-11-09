@@ -81,7 +81,7 @@ namespace GoblinHunter
                 {
                     E.GobVision.Add(MAPCONTAINER[E.X, Y - 1]);
                 }
-                if(E.Y< 0)
+                if(E.Y< MAPHEIGHT)
                 {
                     E.GobVision.Add(MAPCONTAINER[E.X, E.Y + 1]);
                 }
