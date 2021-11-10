@@ -7,6 +7,7 @@ namespace GoblinHunter
     class Map : Enemy
     {
         
+        
         //declaring all the variables for the class
         private Tile [,] mapcontainer;
         public Tile [,] MAPCONTAINER
@@ -63,6 +64,8 @@ namespace GoblinHunter
             ITEMS = new List<Item>(_NUMGOLD);
            
         }
+
+        
 
         public void UpdateVision()
         {

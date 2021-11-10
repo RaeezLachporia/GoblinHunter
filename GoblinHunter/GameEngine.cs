@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 namespace GoblinHunter
+
 {
+    [Serializable]
     class GameEngine : Map
     {
-        Map mp = new Map();
-        
         // declaring the getters and the setter for the values used in the class
         private Map game;
 
@@ -22,21 +24,52 @@ namespace GoblinHunter
             return true;
         }
 
-        public Map(int _EnemyX, int _EnemyY, String _ESYMBOL, TileType _TOT, int _MINWIDTH, int _MAXWIDTH, int _MINHEIGHT, int _MAXHEIGHT, int _NUMBEROFENEMIES) : base()
-        {
-            
-        }
+        
         //declaring the constructor and pulling the variables that are neccessary in this class
-        public GameEngine(int _X, int _Y, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _NumberOfEnemies) : base(_X, _Y," ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH,0)
+        public GameEngine(int _X, int _Y,String _ESYMBOL, TileType _TOT, int _Damage, int _MAXHP, int _mapMinHGHT, int _mapMaxHGHT, int _mapMinWDTH, int _mapMaxWDTH, int _NumberOfEnemies,int _Gold) : base(_X, _Y, " ", _TOT, _mapMinHGHT, _mapMaxHGHT, _mapMinWDTH, _mapMaxWDTH, 0,9)
         {
-            game = new Map(_X, _Y, "", _TOT, _mapMinWDTH, _mapMaxWDTH, _mapMinHGHT, _mapMaxHGHT, _NumberOfEnemies);
-
-        public void Save()
-        {
-            
+            int _gX = _X;
+            int _gY = _Y;
+            String _gSymbol = _ESYMBOL;
+            TileType _gTOT = _TOT;
+            int _gD = _Damage;
+            int _gMAXHP = _MAXHP;
+            int _gMapMinHght = _mapMinHGHT;
+            int _gMapMaxHght = _mapMinHGHT;
+            int _gMapMinWDTH = _mapMinWDTH;
+            int _gMapMaxWDTH = _mapMaxWDTH;
+            int _gNumEnemies = _NumberOfEnemies;
+            int _gGold = _Gold;
+            Map mp = new Map(_gX,_gY,_gSymbol,_gTOT,_gMapMinWDTH,_gMapMaxWDTH,_gMapMinHght,_gMapMaxHght,_gNumEnemies,_gGold);
         }
+
+        public void Save(Map mp)
+        {
+
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream fsin = new FileStream("GoblinHunter.dat", FileMode.Open, FileAccess.Read, FileShare.None);
+
+            try
+            {
+                using(fsin)
+                {
+                    mp = (Map)bf.Deserialize(fsin);
+                    Console.WriteLine();
+                }
+            }
+            catch (Exception)
+            {
+
+                Console.WriteLine("Couldnt write to file ");
+            }
+        }
+       
+
+
+
+
         //sets the symbols for the player, goblin, obstacles and empty tiles 
-        public char enemy = 'G';3
+        public char enemy = 'G';
         public char Hero = 'H';
         public char Obstacle = 'X';
         public char emptyTile = '.';
