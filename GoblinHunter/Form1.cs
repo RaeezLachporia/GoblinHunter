@@ -12,14 +12,27 @@ namespace GoblinHunter
 {
     public partial class goblinHunterFRM : Form
     {
+        private GameEngine game;
+        
         public goblinHunterFRM()
         {
             InitializeComponent();
+            game = new GameEngine(10, 10, " ", Tile.TileType.Empty, 10, 10, 10, 10, 10, 10,10,10);
+            
         }
 
         private void downButtonPress_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mapLBL_Click(object sender, EventArgs e)
+        {
+            
+        }
+        public void Draw()
+        {
+            
         }
     }
 }

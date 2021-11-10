@@ -6,7 +6,7 @@ namespace GoblinHunter
 {
     class Map : Enemy
     {
-        
+        Map mmap = new Map();
         
         //declaring all the variables for the class
         private Tile [,] mapcontainer;

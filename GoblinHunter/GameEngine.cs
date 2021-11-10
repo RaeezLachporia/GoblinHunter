@@ -41,6 +41,7 @@ namespace GoblinHunter
             int _gNumEnemies = _NumberOfEnemies;
             int _gGold = _Gold;
             Map mp = new Map(_gX,_gY,_gSymbol,_gTOT,_gMapMinWDTH,_gMapMaxWDTH,_gMapMinHght,_gMapMaxHght,_gNumEnemies,_gGold);
+            Map m = new Map(10, 10, " ",TOT,10,10,10,10,10,10);
         }
 
         public void Save(Map mp)
