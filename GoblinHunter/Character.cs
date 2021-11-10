@@ -132,16 +132,6 @@ namespace GoblinHunter
             movement = move; //store current move
         }
 
-        /*public abstract Movement  (Movement move = 0)
-       {
-
-       }
-       /*public abstract override String ToString()
-       {
-
-           return Character.ToString();
-       }*/
-
         public override string ToString()
         {
             return base.ToString();
