@@ -6,7 +6,7 @@ namespace GoblinHunter
 {
     class Map : Enemy
     {
-        Map mmap = new Map();
+        Map mmap = new Map(10, 10, " ", TileType.Empty,0,10,0,10,3,3);
         
         //declaring all the variables for the class
         private Tile [,] mapcontainer;
@@ -92,7 +92,7 @@ namespace GoblinHunter
             }
         }
         //method generates the map with the "x" symbol used as the barrier blocks that the player cannot pass through 
-        void generateMap()
+        public void generateMap()
         {
             for (int y = 0; y < MAPWIDTH; y++)
             {

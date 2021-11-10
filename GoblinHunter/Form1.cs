@@ -32,7 +32,7 @@ namespace GoblinHunter
         }
         public void Draw()
         {
-            
+           
         }
     }
 }

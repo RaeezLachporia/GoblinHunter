@@ -41,10 +41,10 @@ namespace GoblinHunter
             int _gNumEnemies = _NumberOfEnemies;
             int _gGold = _Gold;
             Map mp = new Map(_gX,_gY,_gSymbol,_gTOT,_gMapMinWDTH,_gMapMaxWDTH,_gMapMinHght,_gMapMaxHght,_gNumEnemies,_gGold);
-            Map m = new Map(10, 10, " ",TOT,10,10,10,10,10,10);
+            Map mmap = new Map(10, 10, " ",TileType.Empty,10,10,10,10,10,10);
         }
 
-        public void Save(Map mp)
+        public void Save(Map mmap)
         {
 
             BinaryFormatter bf = new BinaryFormatter();
@@ -54,7 +54,13 @@ namespace GoblinHunter
             {
                 using(fsin)
                 {
-                    mp = (Map)bf.Deserialize(fsin);
+                    mmap = (Map)bf.Deserialize(fsin);
+                    Console.WriteLine(Map.TileType.Barrier);
+                    Console.WriteLine(Map.TileType.Empty);
+                    Console.WriteLine(Map.TileType.Hero);
+                    Console.WriteLine(Map.TileType.Enemy);
+                    Console.WriteLine(Map.TileType.Gold);
+                    Console.WriteLine(Map.TileType.Weapon);
                     Console.WriteLine();
                 }
             }
@@ -64,7 +70,29 @@ namespace GoblinHunter
                 Console.WriteLine("Couldnt write to file ");
             }
         }
-       
+
+        public Boolean  Load()
+        {
+            Boolean found = false;
+            BinaryFormatter BR = new BinaryFormatter();
+            FileStream fsin = new FileStream("GoblinHunter.dat", FileMode.Open, FileAccess.Read, FileShare.None);
+            try
+            {
+                using(fsin)
+                {
+                    Game = (Map)BR.Deserialize(fsin);
+
+                }
+                found = true;
+            }
+            catch (Exception)
+            {
+
+                found = false;
+            }
+            return found;
+
+        }
 
 
 
